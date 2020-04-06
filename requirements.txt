@@ -1,4 +1,4 @@
 chrisapp
 pudb
-tensorflow==2.0
-tensorflow-gpu==1.15
+tensorflow
+tensorflow-gpu
