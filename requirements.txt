@@ -1,4 +1,2 @@
 chrisapp
-pudb
-tensorflow
-tensorflow-gpu
+torch

@@ -14,8 +14,9 @@ import os
 #os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 #os.environ["CUDA_VISIBLE_DEVICES"]="0"
 import sys
-import tensorflow.compat.v1 as tf
+
 sys.path.append(os.path.dirname(__file__))
+import torch
 
 # import the Chris app superclass
 from chrisapp.base import ChrisApp
@@ -25,6 +26,15 @@ Gstr_title = """
 
 Generate a title from 
 http://patorjk.com/software/taag/#p=display&f=Doom&t=gpu_test
+
+                    _            _   
+                   | |          | |  
+  __ _ _ __  _   _ | |_ ___  ___| |_ 
+ / _` | '_ \| | | || __/ _ \/ __| __|
+| (_| | |_) | |_| || ||  __/\__ \ |_ 
+ \__, | .__/ \__,_| \__\___||___/\__|
+  __/ | |       ______               
+ |___/|_|      |______|              
 
 """
 
@@ -139,23 +149,18 @@ class GPU_test(ChrisApp):
         """
         Define the code to be run by this plugin app.
         """
-        print ("****************TESTING FOR GPUs**************")
-        gpus = tf.config.experimental.list_physical_devices('GPU')
-        print ("GPUs"+str(gpus))
-        if gpus:
-            # Restrict TensorFlow to only use the first GPU
-            try:
-               tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
-               logical_gpus = tf.config.experimental.list_logical_devices('GPU')
-               print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPU")
-            except RuntimeError as e:
-               # Visible devices must be set before GPUs have been initialized
-               print(e)
-        tf.test.gpu_device_name()
-        tf.config.experimental.list_logical_devices('GPU')
-        
+       
         print(Gstr_title)
         print('Version: %s' % self.get_version())
+        
+        
+        print ("****************TESTING FOR GPUs**************")
+        
+        if torch.cuda.is_available():
+            print(torch.cuda.device_count() ,"GPU(s) is available")
+        else:
+            print("No GPU available")
+
 
     def show_man_page(self):
         """

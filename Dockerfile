@@ -14,7 +14,7 @@
 #
 # To run an interactive shell inside this container, do:
 #
-#   docker run -ti --entrypoint /bin/bash local/pl-gpu-test
+#   docker run -ti --entrypoint /bin/bash local/pl-gpu_test
 #
 # To pass an env var HOST_IP to container, do:
 #
