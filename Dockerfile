@@ -27,16 +27,12 @@
 FROM tensorflow/tensorflow:latest-gpu-py3
 MAINTAINER fnndsc "dev@babymri.org"
 
-ENV APPROOT="/gpu_test"
-COPY . /gpu_test
-RUN make /gpu_test
-
-
-
+ENV APPROOT="/usr/src/gpu_test"
+COPY  ["gpu_test","${APPROOT}"]
 COPY ["requirements.txt", "${APPROOT}"]
 
 WORKDIR $APPROOT
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-
-CMD ["gpu_test/gpu_test.py", "--help"]
+ENTRYPOINT ["python3"]
+CMD ["gpu_test.py", "--help"]
