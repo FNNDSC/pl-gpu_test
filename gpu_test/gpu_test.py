@@ -24,8 +24,6 @@ from chrisapp.base import ChrisApp
 
 Gstr_title = """
 
-Generate a title from 
-http://patorjk.com/software/taag/#p=display&f=Doom&t=gpu_test
 
                     _            _   
                    | |          | |  
