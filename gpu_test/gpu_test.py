@@ -156,6 +156,7 @@ class GPU_test(ChrisApp):
         
         if torch.cuda.is_available():
             print(torch.cuda.device_count() ,"GPU(s) is available")
+            os.system('nvidia-smi')
         else:
             print("No GPU available")
 
