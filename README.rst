@@ -12,6 +12,7 @@ pl-gpu-test
 
 .. contents:: Table of Contents
 
+See also: https://github.com/FNNDSC/dbg-nvidia-smi
 
 Abstract
 --------
