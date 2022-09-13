@@ -112,17 +112,17 @@ class GPU_test(ChrisApp):
     TYPE                    = 'ds'
     DESCRIPTION             = 'An app to check the available GPUs'
     DOCUMENTATION           = '...'
-    VERSION                 = '0.1'
+    VERSION                 = '0.2.2'
     ICON                    = '' # url of an icon image
     LICENSE                 = 'Opensource (MIT)'
     MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
     MIN_NUMBER_OF_WORKERS   = 1  # Override with integer value
     MAX_CPU_LIMIT           = '' # Override with millicore value as string, e.g. '2000m'
-    MIN_CPU_LIMIT           = '' # Override with millicore value as string, e.g. '2000m'
+    MIN_CPU_LIMIT           = '2000m' # Override with millicore value as string, e.g. '2000m'
     MAX_MEMORY_LIMIT        = '' # Override with string, e.g. '1Gi', '2000Mi'
-    MIN_MEMORY_LIMIT        = '' # Override with string, e.g. '1Gi', '2000Mi'
-    MIN_GPU_LIMIT           = 0  # Override with the minimum number of GPUs, as an integer, for your plugin
-    MAX_GPU_LIMIT           = 0  # Override with the maximum number of GPUs, as an integer, for your plugin
+    MIN_MEMORY_LIMIT        = '16000Mi' # Override with string, e.g. '1Gi', '2000Mi'
+    MIN_GPU_LIMIT           = 1  # Override with the minimum number of GPUs, as an integer, for your plugin
+    MAX_GPU_LIMIT           = 1  # Override with the maximum number of GPUs, as an integer, for your plugin
 
     # Use this dictionary structure to provide key-value output descriptive information
     # that may be useful for the next downstream plugin. For example:
