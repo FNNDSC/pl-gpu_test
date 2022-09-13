@@ -21,7 +21,7 @@ setup(
       name             =   'gpu_test',
       # for best practices make this version the same as the VERSION class variable
       # defined in your ChrisApp-derived Python class
-      version          =   '0.2.2',
+      version          =   '0.2.3',
       description      =   'An app to check the available GPUs',
       long_description =   readme(),
       author           =   'Sandip Samal',
