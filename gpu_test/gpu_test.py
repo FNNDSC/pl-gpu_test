@@ -112,7 +112,7 @@ class GPU_test(ChrisApp):
     TYPE                    = 'ds'
     DESCRIPTION             = 'An app to check the available GPUs'
     DOCUMENTATION           = '...'
-    VERSION                 = '0.2.4'
+    VERSION                 = '0.2.5'
     ICON                    = '' # url of an icon image
     LICENSE                 = 'Opensource (MIT)'
     MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
