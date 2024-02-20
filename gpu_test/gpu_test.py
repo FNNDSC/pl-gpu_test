@@ -103,26 +103,17 @@ class GPU_test(ChrisApp):
     """
     An app to check the available GPUs.
     """
-    AUTHORS                 = 'Sandip Samal (sandip.samal@childrens.harvard.edu)'
-    SELFPATH                = os.path.dirname(os.path.abspath(__file__))
-    SELFEXEC                = os.path.basename(__file__)
-    EXECSHELL               = 'python3'
-    TITLE                   = 'An application to check the presence of GPU in the system'
-    CATEGORY                = 'N/A'
-    TYPE                    = 'ds'
-    DESCRIPTION             = 'An app to check the available GPUs'
-    DOCUMENTATION           = '...'
-    VERSION                 = '0.2.5'
-    ICON                    = '' # url of an icon image
-    LICENSE                 = 'Opensource (MIT)'
-    MAX_NUMBER_OF_WORKERS   = 1  # Override with integer value
-    MIN_NUMBER_OF_WORKERS   = 1  # Override with integer value
-    MAX_CPU_LIMIT           = '' # Override with millicore value as string, e.g. '2000m'
-    MIN_CPU_LIMIT           = '3000m' # Override with millicore value as string, e.g. '2000m'
-    MAX_MEMORY_LIMIT        = '' # Override with string, e.g. '1Gi', '2000Mi'
-    MIN_MEMORY_LIMIT        = '32000Mi' # Override with string, e.g. '1Gi', '2000Mi'
-    MIN_GPU_LIMIT           = 0  # Override with the minimum number of GPUs, as an integer, for your plugin
-    MAX_GPU_LIMIT           = 0  # Override with the maximum number of GPUs, as an integer, for your plugin
+    PACKAGE = __package__
+    TITLE = 'Shows GPUs available in the compute env'
+    CATEGORY = 'GPU'
+    TYPE = 'ds'
+    ICON = ''  # url of an icon image
+    MIN_NUMBER_OF_WORKERS = 1  # Override with the minimum number of workers as int
+    MAX_NUMBER_OF_WORKERS = 1  # Override with the maximum number of workers as int
+    MIN_CPU_LIMIT = 2000  # Override with millicore value as int (1000 millicores == 1 CPU core)
+    MIN_MEMORY_LIMIT = 32000  # Override with memory MegaByte (MB) limit as int
+    MIN_GPU_LIMIT = 0  # Override with the minimum number of GPUs as int
+    MAX_GPU_LIMIT = 0  # Override with the maximum number of GPUs as int
 
     # Use this dictionary structure to provide key-value output descriptive information
     # that may be useful for the next downstream plugin. For example:
@@ -166,9 +157,3 @@ class GPU_test(ChrisApp):
         Print the app's man page.
         """
         print(Gstr_synopsis)
-
-
-# ENTRYPOINT
-if __name__ == "__main__":
-    chris_app = GPU_test()
-    chris_app.launch()

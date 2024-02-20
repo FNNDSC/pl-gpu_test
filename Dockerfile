@@ -26,13 +26,13 @@
 #FROM fnndsc/ubuntu-python3:latest
 FROM tensorflow/tensorflow:latest-gpu-py3
 MAINTAINER fnndsc "dev@babymri.org"
+WORKDIR /usr/local/src
 
-ENV APPROOT="/usr/src/gpu_test"
-COPY  ["gpu_test","${APPROOT}"]
-COPY ["requirements.txt", "${APPROOT}"]
-
-WORKDIR $APPROOT
+COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python3"]
-CMD ["gpu_test.py", "--help"]
+
+COPY . .
+RUN pip install .
+
+CMD ["gpu_test", "--help"]
