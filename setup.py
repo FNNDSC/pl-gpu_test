@@ -6,7 +6,7 @@ with open(path.join(path.dirname(path.abspath(__file__)), 'README.rst')) as f:
 
 setup(
     name             = 'gpu_test',
-    version          = '1.0.0',
+    version          = '1.0.1',
     description      = 'An app to check GPU availability',
     long_description = readme,
     author           = 'Sandip Samal',
